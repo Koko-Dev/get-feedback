@@ -7,7 +7,6 @@ function FeedbackList ({ feedback }) {
     )
   }
 
-
   return (
     <div className='feedback-list'>
       {feedback.map(item => (
