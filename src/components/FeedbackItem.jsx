@@ -4,13 +4,18 @@ import Card from './shared/Card';
 
 
 function FeedbackItem ({ item }) {
+
+  const handleClick = (id) => {
+    console.log(id);
+  };
+
   return (
     <Card>
       <div className='num-display'>{ item.rating }</div>
       {/* /.num-display */ }
       <button
         className='close'
-        onClick={() => console.log(123)}
+        onClick={ () => handleClick(item.id) }
       >
         <FaTimes color='purple' />
       </button>
