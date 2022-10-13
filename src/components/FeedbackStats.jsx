@@ -5,7 +5,7 @@ function FeedbackStats ({ feedback }) {
 
   }, 0) / feedback.length;
 
-  average = average.toFixed(1);
+  average = average.toFixed(1).replace(/[.,]0$/, '');
 
   return (
     <div className='feedback-stats'>
