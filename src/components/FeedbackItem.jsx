@@ -10,7 +10,7 @@ function FeedbackItem ({ item, handleDelete }) {
       {/* /.num-display */ }
       <button
         className='close'
-        onClick={ () => handleDelete(item.id)} 
+        onClick={ () => handleDelete(item.id)}
       >
         <FaTimes color='purple' />
       </button>
