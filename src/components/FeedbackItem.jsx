@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import Card from './shared/Card';
 
 
@@ -10,6 +11,10 @@ function FeedbackItem ({ item }) {
       {/* /.text-display */ }
     </Card>
   );
+}
+
+FeedbackItem.propTypes = {
+  item: PropTypes.object.isRequired,
 }
 
 
