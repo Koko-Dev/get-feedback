@@ -8,7 +8,10 @@ function FeedbackItem ({ item }) {
     <Card>
       <div className='num-display'>{ item.rating }</div>
       {/* /.num-display */ }
-      <button className='close'>
+      <button
+        className='close'
+        onClick={() => console.log(123)}
+      >
         <FaTimes color='purple' />
       </button>
       <div className='text-display'>{ item.text }</div>
