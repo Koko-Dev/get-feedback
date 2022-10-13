@@ -1,8 +1,10 @@
+import PropTypes from 'prop-types';
+
+
 function FeedbackStats ({ feedback }) {
   // Calculates ratings average
   let average = feedback.reduce((accumulator, currentValue) => {
     return accumulator + currentValue.rating;
-
   }, 0) / feedback.length;
 
   average = average.toFixed(1).replace(/[.,]0$/, '');
@@ -15,5 +17,9 @@ function FeedbackStats ({ feedback }) {
   );
 }
 
+
+FeedbackStats.protoTypes = {
+  feedback: PropTypes.array.isRequired,
+};
 
 export default FeedbackStats;
