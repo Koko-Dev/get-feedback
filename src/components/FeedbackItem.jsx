@@ -3,19 +3,14 @@ import PropTypes from 'prop-types';
 import Card from './shared/Card';
 
 
-function FeedbackItem ({ item }) {
-
-  const handleClick = (id) => {
-    console.log(id);
-  };
-
+function FeedbackItem ({ item, handleDelete }) {
   return (
     <Card>
       <div className='num-display'>{ item.rating }</div>
       {/* /.num-display */ }
       <button
         className='close'
-        onClick={ () => handleClick(item.id) }
+        onClick={ () => handleDelete(item.id)} 
       >
         <FaTimes color='purple' />
       </button>
