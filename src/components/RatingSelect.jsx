@@ -1,10 +1,6 @@
-import { useState } from 'react';
-
-
 function RatingSelect ({ select, selected }) {
   const handleChange = (e) => {
     select(+e.currentTarget.value);
-    console.log(+e.currentTarget.value)
   };
 
   return (
