@@ -26,7 +26,8 @@ function FeedbackForm () {
     <Card>
       <form>
         <h2>How would you rate your service with us?</h2>
-        <RatingSelect />
+        <RatingSelect select={ setRating }
+                      selected={ rating } />
         <div className='input-group'>
           <input type='text'
                  placeholder='Write a review'
