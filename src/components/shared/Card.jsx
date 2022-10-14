@@ -1,17 +1,17 @@
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
-function Card ({ children, reverse }) {
+function Card({ children, reverse }) {
 
   return (
-    <div className='card'
-      style={ {
-        backgroundColor: reverse ? 'rgba(0,0,0,0.4)' : '#ffffff',
-        color: reverse ? '#ffffff' : '#000000',
-      } }
+    <div className="card"
+         style={ {
+           backgroundColor: reverse ? 'rgba(0,0,0,0.4)' : '#ffffff',
+           color: reverse ? '#ffffff' : '#000000',
+         } }
     >
       { children }
     </div>
-  );
+  )
 }
 
 Card.defaultProps = {
@@ -24,5 +24,4 @@ Card.propTypes = {
 }
 
 
-
-export default Card;
+export default Card

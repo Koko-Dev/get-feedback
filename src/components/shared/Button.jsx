@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
-function Button ({ children, version, type, isDisabled }) {
+function Button({ children, version, type, isDisabled }) {
   return (
     <button
       type={ type }
@@ -9,7 +9,7 @@ function Button ({ children, version, type, isDisabled }) {
     >
       { children }
     </button>
-  );
+  )
 }
 
 Button.defaultProps = {
@@ -26,4 +26,4 @@ Button.propTypes = {
 }
 
 
-export default Button;
+export default Button
