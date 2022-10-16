@@ -5,6 +5,7 @@ import FeedbackList from './components/FeedbackList'
 import FeedbackStats from './components/FeedbackStats'
 import FeedbackForm from './components/FeedbackForm'
 import FeedbackData from './data/FeedbackData'
+import AboutPage from './pages/AboutPage'
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
           feedback={ feedback }
           handleDelete={ deleteFeedback }
         />
+        <AboutPage />
       </div>
     </>
   )
