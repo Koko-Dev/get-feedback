@@ -11,7 +11,6 @@ import AboutPage from './pages/AboutPage'
 
 
 function App() {
-  const [ feedback, setFeedback ] = useState(FeedbackData)
 
   return (
     <FeedbackProvider>
@@ -24,7 +23,7 @@ function App() {
               path="/"
               element={
                 <>
-                  <FeedbackForm handleAdd={ addFeedback }/>
+                  <FeedbackForm />
                   <FeedbackStats />
                   <FeedbackList />
                 </>
