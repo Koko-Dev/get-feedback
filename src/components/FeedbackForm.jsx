@@ -11,7 +11,7 @@ function FeedbackForm() {
   const [ btnDisabled, setBtnDisabled ] = useState(true)
   const [ message, setMessage ] = useState('')
 
-  const { addFeedback } = useContext(FeedbackContext)
+  const { addFeedback, feedbackEdit } = useContext(FeedbackContext)
 
   const handleTextChange = (e) => {
     if (text === '') {

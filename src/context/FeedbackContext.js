@@ -13,13 +13,15 @@ export const FeedbackProvider = ({ children }) => {
   } ])
 
   const [ feedbackEdit, setFeedbackEdit ] = useState({
-                                                       item: {}, edit: false
+                                                       item: {},
+                                                       edit: false
                                                      })
 
   // Set item to be updated
   const editFeedback = (item) => {
     setFeedbackEdit({
-                      item, edit: true,
+                      item,
+                      edit: true,
                     })
   }
 
@@ -39,7 +41,12 @@ export const FeedbackProvider = ({ children }) => {
 
   return (
     <FeedbackContext.Provider value={ {
-      feedback, deleteFeedback, addFeedback, editFeedback
+      feedback,
+      deleteFeedback,
+      addFeedback,
+      editFeedback,
+      feedbackEdit,
+      setFeedback,
     } }>
       { children }
     </FeedbackContext.Provider>
