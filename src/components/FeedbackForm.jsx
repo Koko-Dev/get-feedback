@@ -11,9 +11,24 @@ function FeedbackForm() {
   const [ btnDisabled, setBtnDisabled ] = useState(true)
   const [ message, setMessage ] = useState('')
 
+  // Note: feedbackEdit is state from FeedbackContext whose
+  //  initialState is set to an object with two properties --
+  //  item ( set to an empty object, but when set will contain
+  //  the id, text and rating properties of the specific feedback
+  //  when user clicks a specific feedback pencil icon
   const { addFeedback, feedbackEdit } = useContext(FeedbackContext)
   useEffect(() => {
-    console.log('hello')
+    // todo: Check to see if there is something in feedbackEdit first
+    if (feedbackEdit.edit === true) {
+      // Enable the button
+      setBtnDisabled(false)
+      // Set the text to the value of the state feedbackEdit item text property
+      setText(feedbackEdit.item.text)
+      // Set the rating to the value of the state feedbackEdit item rating property
+      setRating(feedbackEdit.item.rating)
+
+      // Set the text value to feedbackEdit.item.text
+    }
 
   }, [feedbackEdit])
 
