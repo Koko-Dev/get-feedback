@@ -6,12 +6,12 @@ import FeedbackContext from './../context/FeedbackContext'
 
 
 function FeedbackForm() {
-  const { addFeedback } = useContext(FeedbackContext)
-
   const [ text, setText ] = useState('')
   const [ rating, setRating ] = useState(10)
   const [ btnDisabled, setBtnDisabled ] = useState(true)
   const [ message, setMessage ] = useState('')
+
+  const { addFeedback } = useContext(FeedbackContext)
 
   const handleTextChange = (e) => {
     if (text === '') {
