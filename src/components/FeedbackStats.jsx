@@ -24,7 +24,7 @@ function FeedbackStats() {
 }
 
 // Note: Not used with Context as feedback data now coming from Context
-/*FeedbackStats.protoTypes = {
+/*FeedbackStats.propTypes = {
   feedback: PropTypes.array.isRequired,
 }*/
 
