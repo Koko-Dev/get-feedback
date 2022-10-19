@@ -29,7 +29,6 @@ function FeedbackForm() {
 
       // Set the text value to feedbackEdit.item.text
     }
-
   }, [feedbackEdit])
 
   const handleTextChange = (e) => {
