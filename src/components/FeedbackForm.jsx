@@ -13,10 +13,10 @@ function FeedbackForm() {
 
   // Note: feedbackEdit is state from FeedbackContext whose
   //  initialState is set to an object with two properties --
-  //  item ( set to an empty object, but when set will contain
+  //  edit and item ( set to an empty object, but when set will contain
   //  the id, text and rating properties of the specific feedback
-  //  when user clicks a specific feedback pencil icon
-  const { addFeedback, feedbackEdit } = useContext(FeedbackContext)
+  //  when user clicks a specific feedback pencil icon )
+  const { addFeedback, feedbackEdit, updateFeedback } = useContext(FeedbackContext)
   useEffect(() => {
     // todo: Check to see if there is something in feedbackEdit first
     if (feedbackEdit.edit === true) {
@@ -52,7 +52,11 @@ function FeedbackForm() {
         rating,
       }
 
-      addFeedback(newFeedback)
+      if (feedbackEdit.edit === true) {
+        updateFeedback(feedbackEdit.item.id, newFeedback)
+      } else {
+        addFeedback(newFeedback)
+      }
     }
   }
 
