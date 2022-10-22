@@ -1,6 +1,7 @@
 import {AnimatePresence, motion} from 'framer-motion'
 import {useContext} from 'react'
 // import PropTypes from 'prop-types'
+import Spinner from './shared/Spinner'
 import FeedbackItem from './FeedbackItem'
 import FeedbackContext from '../context/FeedbackContext'
 
@@ -17,7 +18,7 @@ function FeedbackList() {
   }
 
 
-  return isLoading ? <h3>Loading...</h3> : (
+  return isLoading ? <Spinner /> : (
     <div className="feedback-list">
       <AnimatePresence>
         { feedback.map(item => (
