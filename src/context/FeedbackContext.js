@@ -1,13 +1,12 @@
 import {createContext, useEffect, useState} from 'react'
 
-const FeedbackContext = createContext()
+const FeedbackContext = createContext(null)
 
 export const FeedbackProvider = ({ children }) => {
   const [ isLoading, setIsLoading ] = useState(true)
   const [ feedback, setFeedback ] = useState([])
   const [ feedbackEdit, setFeedbackEdit ] = useState({
-                                                       item: {},
-                                                       edit: false,
+                                                       item: {}, edit: false,
                                                      })
 
   useEffect(() => {
@@ -25,23 +24,21 @@ export const FeedbackProvider = ({ children }) => {
 
   // Add feedback
   const addFeedback = async (newFeedback) => {
-    const response = await fetch(
-      '/feedback',
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(newFeedback),
-      })
+    const response = await fetch('/feedback', {
+      method: 'POST', headers: {
+        'Content-Type': 'application/json'
+      }, body: JSON.stringify(newFeedback),
+    })
 
     const data = await response.json()
-    setFeedback([data, ...feedback])
+    setFeedback([ data, ...feedback ])
   }
 
   // Delete feedback
-  const deleteFeedback = (id) => {
+  const deleteFeedback = async (id) => {
     if (window.confirm('Are you sure  you want to delete?')) {
+      // Delete from db.json
+      await fetch(`/feedback/${ id }`, { method: 'DELETE' })
       setFeedback(feedback.filter(item => item.id !== id))
     }
   }
@@ -56,21 +53,14 @@ export const FeedbackProvider = ({ children }) => {
   // Set item to be updated
   const editFeedback = (item) => {
     setFeedbackEdit({
-                      item,
-                      edit: true,
+                      item, edit: true,
                     })
   }
 
   return (
     <FeedbackContext.Provider
       value={ {
-        feedback,
-        feedbackEdit,
-        isLoading,
-        deleteFeedback,
-        addFeedback,
-        editFeedback,
-        updateFeedback,
+        feedback, feedbackEdit, isLoading, deleteFeedback, addFeedback, editFeedback, updateFeedback,
       } }
     >
       { children }
